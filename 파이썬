@@ -1,0 +1,31 @@
+students = []
+
+for i in range(3):
+    name = input(f"{i+1}번째 학생 이름: ")
+    kor = int(input("국어 점수: "))
+    eng = int(input("영어 점수: "))
+    math = int(input("수학 점수: "))
+    students.append([name, kor, eng, math])
+
+print("\n성명\t\t국어\t\t영어\t\t수학\t총점\t평균")
+
+total_kor = total_eng = total_math = 0
+
+for s in students:
+    name, kor, eng, math = s
+    total = kor + eng + math
+    avg = round(total / 3 , 1)
+    print(f"{name}\t\t{kor}\t\t{eng}\t\t{math}\t{total}\t{avg}")
+
+    total_kor += kor
+    total_eng += eng
+    total_math += math
+
+    total_avg1 = round(total_kor / 3 , 1)
+    total_avg2 = round(total_eng / 3 , 1)
+    total_avg3 = round(total_math / 3 , 1)
+
+print("=" * 70)
+print(f"총점/평균\t{total_kor}/{total_avg1}\t{total_eng}/{total_avg2}\t{total_math}/{total_avg3}")
+
+  // 파이썬 하면서 제일 힘들었던 코드
