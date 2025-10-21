@@ -1,0 +1,17 @@
+# Flutter SDK 설치 자동화 스크립트
+$flutterPath = "$env:USERPROFILE\flutter"
+git clone https://github.com/flutter/flutter.git -b stable $flutterPath
+
+# 환경 변수에 flutter/bin 추가
+setx PATH "$env:PATH;$flutterPath\bin"
+
+# 설치 확인(새로운 터미널로 열어서 확인해야 함)
+flutter doctor
+
+flutter create second_app # second_app 플러터 생성
+cd second_app # second_app로 이동하기
+flutter run # 플러터 실행
+
+code . #vs코드로 이동
+
+#플러터 편하게 설치 할 수 있어서 좋아요
