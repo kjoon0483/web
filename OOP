@@ -1,0 +1,47 @@
+//캡슐화 되지 않은 dart예제
+class BankAccount {
+  double balance = 0;
+
+  void deposit(double amount) {
+    balance += amount;
+  }
+
+  void withdraw(double amount) {
+    balance -= amount;
+  }
+}
+
+void main() {
+  var account = BankAccount();
+  account.balance = -1000; // 외부에서 마음대로 접근 가능
+  print(account.balance);  // -1000 (잘못된 상태)
+}
+
+
+// 캡슐화 된 dart예
+class BankAccount {
+  double _balance = 0; // private 변수
+
+  double get balance => _balance; // 읽기 전용 getter
+
+  void deposit(double amount) {
+    if (amount > 0) {
+      _balance += amount;
+    }
+  }
+
+  void withdraw(double amount) {
+    if (amount > 0 && amount <= _balance) {
+      _balance -= amount;
+    }
+  }
+}
+
+void main() {
+  var account = BankAccount();
+  account.deposit(500);
+  account.withdraw(200);
+  print(account.balance); // 300
+
+  // account._balance = -1000; // 접근 불가 (private)
+}
