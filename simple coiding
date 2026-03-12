@@ -1,0 +1,12 @@
+import subprocess
+from datetime import datetime
+
+with open("log.txt", "a") as f:
+    f.write(f"{datetime.now()}\n")
+
+subprocess.run(["git", "add", "."])
+subprocess.run(["git", "commit", "-m", "daily commit"])
+subprocess.run(["git", "push"])
+
+#실행하면 log.txt에 날짜 찍고 → 커밋 → 푸시 자동으로 해줘요.
+#클로드 ai 활용 자주 하기
