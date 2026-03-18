@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include "listS.h"
+
+int main()
+{
+	printf("Start선형 리스트 원소 삽입과 삭제 연습\n");
+	int list[MAX] = { 10, 20, 40, 50, 60, 70 };
+	int i, move, size = 6;  //size는 리스트에 있는 원소의 개수
+	printf("\n삽입 전 선형 리스트 : ");
+	for (i = 0; i < size; i++)
+		printf("%3d ", list[i]);
+	printf("\n원소의 갯수 : %d \n", size);
+
+	move = insertElement(list, size, 30);
+
+	printf("\n삽입 후 선형 리스트 : ");
+	for (i = 0; i <= size; i++)
+		printf("%3d ", list[i]);
+	printf("\n원소의 갯수 : %d ", ++size);
+	printf("\n자리 이동 횟수 : %d \n", move);
+
+	printf("원소 30을 삭제전 size=%d\n", size);
+	move = deleteElement(list, size, 30);
+	if (move == size)
+		printf("\n선형 리스트에 원소가 없어서 삭제할 수 없습니다.\n");
+	else {
+		printf("\n삭제 후 선형 리스트 : ");
+		for (i = 0; i < size - 1; i++)
+			printf("%3d ", list[i]);
+		printf("\n원소의 갯수 : %d ", --size);
+		printf("\n자리 이동 횟수 : %d \n", move);
+	}
+
+	return 0;
+}
+
+#실행결과
+#Start선형 리스트 원소 삽입과 삭제 연습
+
+#삽입 전 선형 리스트 :  10  20  40  50  60  70
+#원소의 갯수 : 6
+
+#삽입 후 선형 리스트 :  10  20  30  40  50  60  70
+#원소의 갯수 : 7
+#자리 이동 횟수 : 4
+#원소 30을 삭제전 size=7
+
+#삭제 후 선형 리스트 :  10  20  40  50  60  70
+#원소의 갯수 : 6
+#자리 이동 횟수 : 4
+
