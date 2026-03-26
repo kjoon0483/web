@@ -1,0 +1,37 @@
+//HelloApplication.java
+package com.example.hello;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+// Spring Boot 메인 실행 클래스
+@SpringBootApplication
+public class HelloApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(HelloApplication.class, args);
+    }
+}
+
+//HelloController.java
+package com.example.hello;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+// REST API 컨트롤러 - JSON 응답 자동 반환
+@RestController
+public class HelloController {
+
+    // GET /hello 요청 처리
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello, Spring!";
+    }
+
+    // GET /hello/홍길동 → 이름을 받아서 인사 반환
+    @GetMapping("/hello/{name}")
+    public String helloName(@PathVariable String name) {
+        return "안녕하세요, " + name + "님!";
+    }
+}
