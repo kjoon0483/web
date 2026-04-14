@@ -1,0 +1,12 @@
+├── aws/
+│   ├── s3-utils.sh       # S3 버킷 관리
+│   ├── ec2-utils.sh      # EC2 인스턴스 관리
+│   └── lambda-utils.sh   # Lambda 함수 관리
+├── gcp/
+│   └── gcp-utils.sh      # GCP VM, GCS, Cloud Run
+├── azure/
+│   └── azure-utils.sh    # Azure VM, Storage, App Service
+├── docker/
+│   └── docker-utils.sh   # Docker 컨테이너/이미지 관리
+└── k8s/
+    └── k8s-utils.sh      # kubectl 단축 명령어
