@@ -43,5 +43,5 @@ void main() {
   account.withdraw(200);
   print(account.balance); // 300
 
-  // account._balance = -1000; // 접근 불가 (private)
+  // account._balance = -1000; // 접근 불가
 }
